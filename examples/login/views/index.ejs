@@ -1,0 +1,6 @@
+<% if (!user) { %>
+	<h2>Welcome! Please log in.</h2>
+    <a href="/auth/alis">LOGIN</a>
+<% } else { %>
+	<h2>Hello, <%= user.id %>.</h2>
+<% } %>

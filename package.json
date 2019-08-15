@@ -1,0 +1,48 @@
+{
+    "name": "passport-alis",
+    "version": "1.0.0",
+    "description": "ALIS authentication strategy for passport",
+    "contributors": [
+        "hoosan <hoosanalis@gmail.com>"
+    ],
+    "keywords": [
+        "passport",
+        "auth",
+        "authentication",
+        "identity",
+        "oauth2",
+        "alis"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/hoosan/passport-alis.git"
+    },
+    "bugs": {
+        "url": "git://github.com/hoosan/passport-alis.git/issues"
+    },
+    "license": "MIT",
+    "main": "./lib/passport-alis",
+    "dependencies": {
+        "base64url": "^3.0.1",
+        "js-sha256": "^0.9.0",
+        "jsonwebtoken": "^8.5.1",
+        "jwk-to-pem": "^2.0.1",
+        "node-fetch": "^2.6.0",
+        "passport": "*",
+        "passport-oauth": "^1.0.0",
+        "pkginfo": "0.2.x",
+        "request": "^2.88.0",
+        "util": "^0.12.1"
+    },
+    "devDependencies": {
+        "vows": "0.7.x",
+        "express": "*"
+    },
+    "scripts": {
+        "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js",
+        "postinstall": "perl ./oauth2_patch.pl"
+    },
+    "engines": {
+        "node": ">= 0.4.0"
+    }
+}
