@@ -14,17 +14,18 @@ passport-alis - OAuth2.0 package for ALIS
 
 ### Authorization Endpoint
 
-    var passport = require('passport');
+    const passport = require('passport');
+	const ALISStrategy = require('passport-alis');
 
 	passport.use(new ALISStrategy({
-	    clientID     : <ALIS_APP_ID>,
+		clientID     : <ALIS_APP_ID>,
 		clientSecret : <ALIS_APP_SECRET>,
 		callbackURL  : <CALL_BACK_URL>,
-	}, function(accessToken, refreshtoken, profile, done){
+	}, function(accessToken, refreshtoken, id_token, profile, done){
 	    // With this accessToken you can access user profile data.
 		// In the case that accessToken is expired, you should
 		// regain it with refreshToken. So you have to keep these token
-		// safely. done will get user profile data such as openid in YConnect
+		// safely.
 	});
 
 
