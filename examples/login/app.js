@@ -40,11 +40,7 @@ passport.use(new ALISStrategy({
   , clientSecret: require('./config').client_secret
   , callbackURL:  require('./config').redirect_uri
   },
-  function(accessToken, refreshToken, idToken, profile, done) {
-    
-    console.log(`access: ${accessToken}`);
-    console.log(`idToken: ${idToken}`);
-
+  function(accessToken, refreshToken, profile, done) {
     return done(null, profile);
   }
 ));

@@ -18,14 +18,14 @@ passport-alis - OAuth2.0 package for ALIS
 	const ALISStrategy = require('passport-alis').ALISStrategy;
 
 	passport.use(new ALISStrategy({
-		clientID     : <ALIS_APP_ID>,
-		clientSecret : <ALIS_APP_SECRET>,
-		callbackURL  : <CALL_BACK_URL>,
-	}, function(accessToken, refreshtoken, id_token, profile, done){
+	    clientID     : <ALIS_APP_ID>,
+	    clientSecret : <ALIS_APP_SECRET>,
+	    callbackURL  : <CALL_BACK_URL>,
+	}, function(accessToken, refreshtoken, profile, done){
 	    // With this accessToken you can access user profile data.
-		// In the case that accessToken is expired, you should
-		// regain it with refreshToken. So you have to keep these token
-		// safely.
+	    // In the case that accessToken is expired, you should
+	    // regain it with refreshToken. So you have to keep these token
+	    // safely.
 	});
 
 
@@ -40,4 +40,4 @@ So this process is not required with this module.
 MIT License. Please see the LICENSE file for details.
 
 
-Developed by hoosan(hoosan16)
+Developed by hoosan([@hoosan16](https://twitter.com/hoosan16))
