@@ -15,7 +15,7 @@ passport-alis - OAuth2.0 package for ALIS
 ### Authorization Endpoint
 
     const passport = require('passport');
-	const ALISStrategy = require('passport-alis');
+	const ALISStrategy = require('passport-alis').ALISStrategy;
 
 	passport.use(new ALISStrategy({
 		clientID     : <ALIS_APP_ID>,
@@ -32,7 +32,7 @@ passport-alis - OAuth2.0 package for ALIS
 ### Token Endpoint
 
 With this module, you don't have to do anything to get accessToken.
-As you see above, you have already obtain accessToken and refreshToken.
+As you see above, you have already obtained accessToken and refreshToken.
 So this process is not required with this module.
 
 ### License
