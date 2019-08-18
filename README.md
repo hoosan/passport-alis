@@ -1,6 +1,8 @@
 passport-alis - OAuth2.0 package for ALIS
 ===========
 
+[![Build Status](https://travis-ci.org/hoosan/passport-alis.svg?branch=master)](https://travis-ci.org/hoosan/passport-alis)
+
 ## Introduction
 
 [Passport](http://passportjs.org/) strategy for authenticating with [ALIS](http://alis.to) using the OAuth 2.0 API
