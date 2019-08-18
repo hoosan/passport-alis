@@ -1,6 +1,6 @@
 {
     "name": "passport-alis",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "ALIS authentication strategy for passport",
     "contributors": [
         "hoosan <hoosanalis@gmail.com>"
@@ -44,6 +44,6 @@
         "postinstall": "perl ./oauth2_patch.pl"
     },
     "engines": {
-        "node": ">= 0.4.0"
+        "node": ">= 7.0.0"
     }
 }
