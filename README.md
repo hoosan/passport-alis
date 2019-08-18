@@ -8,7 +8,7 @@ passport-alis - OAuth2.0 package for ALIS
 
 ## Install
 
-    npm package will be available soon
+    npm install passport-alis
 
 ## Usage
 
