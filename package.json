@@ -21,7 +21,7 @@
         "url": "git://github.com/hoosan/passport-alis.git/issues"
     },
     "license": "MIT",
-    "main": "./lib/passport-alis",
+    "main": "./lib",
     "dependencies": {
         "base64url": ">=3.0.1",
         "js-sha256": ">=0.9.0",
