@@ -39,8 +39,7 @@
         "express": "*"
     },
     "scripts": {
-        "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js",
-        "postinstall": "perl ./oauth2_patch.pl"
+        "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
     },
     "engines": {
         "node": ">= 7.0.0"
