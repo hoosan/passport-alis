@@ -2,7 +2,7 @@ const vows = require('vows')
   , assert = require('assert')
   , util = require('util')
   , url = require('url');
-const ALISStrategy = require('../lib/passport-alis/strategy')
+const ALISStrategy = require('../lib')
   , Config = require('../config');
 
 // dummy data

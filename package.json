@@ -30,7 +30,6 @@
         "node-fetch": ">=2.6.0",
         "passport": "*",
         "passport-oauth": ">=1.0.0",
-        "pkginfo": ">=0.2.x",
         "request": ">=2.88.0",
         "util": ">=0.12.1",
         "diff": ">=3.5.0"
