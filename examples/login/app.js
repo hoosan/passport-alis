@@ -2,12 +2,15 @@
 
 var express = require('express')
   , passport = require('passport')
-  , ALISStrategy = require('../../lib/passport-alis').ALISStrategy;
+  , ALISStrategy = require('../../lib').ALISStrategy;
 
 var methodOverride = require('method-override')
 var session = require('express-session')
 var bodyParser = require('body-parser')
 var flash = require('connect-flash');
+const jwkToPem = require("jwk-to-pem")
+const jwt = require("jsonwebtoken")
+const fetch = require("node-fetch")
 
 var SCOPE = "read";
 
@@ -30,7 +33,6 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 })
 
-
 // Use the ALISStrategy within Passport.
 //   Strategies in Passport require a `verify` function, which accept
 //   credentials (in this case, an accessToken, refreshToken, and ALIS
@@ -40,10 +42,34 @@ passport.use(new ALISStrategy({
   , clientSecret: require('./config').client_secret
   , callbackURL:  require('./config').redirect_uri
   },
-  function(accessToken, refreshToken, profile, done) {
+  async function(accessToken, refreshToken, param, profile, done) {
+
+    const iss = "https://alis.to/oauth2";
+    const token = param.id_token;
+    const sig_key = await get_sig_key(
+      jwt.decode(token, { complete: true }).header.kid
+    );
+    const decoded = jwt.verify(token, sig_key);
+    const now = Math.floor(Date.now() / 1000);
+
+    if (decoded.iss !== iss || decoded.exp < now) {
+      return done(null, false, { message: "ID token is invalid or expired."});
+    }
+
     return done(null, profile);
   }
 ));
+
+const get_sig_key = async (kid) => {
+  const jwk_url = 'https://alis.to/oauth2/jwks'
+  const response = await fetch(jwk_url);
+  const data = await response.json();
+  for (const k of data.keys) {
+    if (k.kid === kid) {
+      return jwkToPem(k);
+    }
+  }
+}
 
 var app = express();
 
