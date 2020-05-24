@@ -24,15 +24,17 @@
     "main": "./lib",
     "dependencies": {
         "base64url": ">=3.0.1",
+        "diff": ">=3.5.0",
+        "dotenv": "^8.2.0",
         "js-sha256": ">=0.9.0",
         "jsonwebtoken": ">=8.5.1",
         "jwk-to-pem": ">=2.0.1",
+        "minimist": ">=0.2.1",
         "node-fetch": ">=2.6.0",
         "passport": "*",
         "passport-oauth": ">=1.0.0",
         "request": ">=2.88.0",
-        "util": ">=0.12.1",
-        "diff": ">=3.5.0"
+        "util": ">=0.12.1"
     },
     "devDependencies": {
         "vows": ">=0.7.x",
